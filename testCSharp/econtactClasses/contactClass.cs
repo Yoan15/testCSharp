@@ -47,6 +47,46 @@ namespace testCSharp.econtactClasses
         }
 
         //Insert Data to BDD
+        public bool Insert(contactClass c)
+        {
+            bool isSuccess = false;
+
+            //connection BDD
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            try
+            {
+                string sql = "INSERT INTO tbl_contact (FirstName, LastName, ContactNo, Address, Gender) VALUES (@FirstName, @LastName, @ContactNo, @Address, @Gender)";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@FirstName", c.FirstName);
+                cmd.Parameters.AddWithValue("@LastName", c.LastName);
+                cmd.Parameters.AddWithValue("@ContactNo", c.ContactNo);
+                cmd.Parameters.AddWithValue("@Address", c.Address);
+                cmd.Parameters.AddWithValue("@Gender", c.Gender);
+
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+
+                if (rows>0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+
+            }
+            return isSuccess;
+        }
+
 
     }
 }
