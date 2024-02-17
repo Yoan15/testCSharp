@@ -82,11 +82,84 @@ namespace testCSharp.econtactClasses
             }
             finally
             {
-
+                conn.Close();
             }
             return isSuccess;
         }
 
+        public bool Update(contactClass c)
+        {
+            bool isSuccess = false;
+            //connection BDD
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            try
+            {
+                string sql = "UPDATE tbl_contact SET FirstName=@FirstName, LastName=@LastName, ContactNo=@ContactNo, Address=@Address, Gender=@Gender WHERE ContactID=@ContactID";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@FirstName", c.FirstName);
+                cmd.Parameters.AddWithValue("@LastName", c.LastName);
+                cmd.Parameters.AddWithValue("@ContactNo", c.ContactNo);
+                cmd.Parameters.AddWithValue("@Address", c.Address);
+                cmd.Parameters.AddWithValue("@Gender", c.Gender);
+                cmd.Parameters.AddWithValue("@ContactID", c.ContactID);
 
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isSuccess;
+        }
+
+        public bool Delete(contactClass c)
+        {
+            bool isSuccess = false;
+            //connection BDD
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            try
+            {
+                string sql = "DELETE * FROM tbl_contact WHERE ContactID=@ContactID";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@ContactID", c.ContactID);
+
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isSuccess;
+        }
     }
 }
