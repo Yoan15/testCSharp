@@ -37,8 +37,8 @@ namespace testCSharp
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtboxLastName = new System.Windows.Forms.TextBox();
             this.lblbLastName = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.lblContactNumber = new System.Windows.Forms.Label();
+            this.txtboxContactNo = new System.Windows.Forms.TextBox();
+            this.lblContactNo = new System.Windows.Forms.Label();
             this.txtboxAddress = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
             this.cmbGender = new System.Windows.Forms.ComboBox();
@@ -123,24 +123,24 @@ namespace testCSharp
             this.lblbLastName.TabIndex = 5;
             this.lblbLastName.Text = "Last Name";
             // 
-            // textBox3
+            // txtboxContactNo
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(100, 351);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(244, 29);
-            this.textBox3.TabIndex = 8;
+            this.txtboxContactNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtboxContactNo.Location = new System.Drawing.Point(100, 351);
+            this.txtboxContactNo.Name = "txtboxContactNo";
+            this.txtboxContactNo.Size = new System.Drawing.Size(244, 29);
+            this.txtboxContactNo.TabIndex = 8;
             // 
-            // lblContactNumber
+            // lblContactNo
             // 
-            this.lblContactNumber.AutoSize = true;
-            this.lblContactNumber.BackColor = System.Drawing.Color.Transparent;
-            this.lblContactNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblContactNumber.Location = new System.Drawing.Point(12, 354);
-            this.lblContactNumber.Name = "lblContactNumber";
-            this.lblContactNumber.Size = new System.Drawing.Size(91, 21);
-            this.lblContactNumber.TabIndex = 7;
-            this.lblContactNumber.Text = "Contact No.";
+            this.lblContactNo.AutoSize = true;
+            this.lblContactNo.BackColor = System.Drawing.Color.Transparent;
+            this.lblContactNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblContactNo.Location = new System.Drawing.Point(12, 354);
+            this.lblContactNo.Name = "lblContactNo";
+            this.lblContactNo.Size = new System.Drawing.Size(91, 21);
+            this.lblContactNo.TabIndex = 7;
+            this.lblContactNo.Text = "Contact No.";
             // 
             // txtboxAddress
             // 
@@ -277,8 +277,8 @@ namespace testCSharp
             this.Controls.Add(this.cmbGender);
             this.Controls.Add(this.txtboxAddress);
             this.Controls.Add(this.lblAddress);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.lblContactNumber);
+            this.Controls.Add(this.txtboxContactNo);
+            this.Controls.Add(this.lblContactNo);
             this.Controls.Add(this.txtboxLastName);
             this.Controls.Add(this.lblbLastName);
             this.Controls.Add(this.txtboxFirstName);
@@ -305,8 +305,8 @@ namespace testCSharp
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.TextBox txtboxLastName;
         private System.Windows.Forms.Label lblbLastName;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label lblContactNumber;
+        private System.Windows.Forms.TextBox txtboxContactNo;
+        private System.Windows.Forms.Label lblContactNo;
         private System.Windows.Forms.TextBox txtboxAddress;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.ComboBox cmbGender;
