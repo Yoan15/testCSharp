@@ -58,6 +58,7 @@ namespace testCSharp
         //Vider les champs
         public void Clear()
         {
+            //Vider les textbox
             txtboxContactID.Text = "";
             txtboxFirstName.Text = "";
             txtboxLastName.Text = "";
@@ -68,7 +69,30 @@ namespace testCSharp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            //Récupérer les valeurs à partir des textbox
+            c.ContactID = int.Parse(txtboxContactID.Text);
+            c.FirstName = txtboxFirstName.Text;
+            c.LastName = txtboxLastName.Text;
+            c.ContactNo = txtboxContactNo.Text;
+            c.Address = txtboxAddress.Text;
+            c.Gender = cmbGender.Text;
+
+            //Mise à jour des données dans la BDD
+            bool success = c.Update(c);
+            if (success = true)
+            {
+                //Update réussie
+                MessageBox.Show("Contact has been updated");
+                Clear();
+            }
+            else
+            {
+                //Update échouée
+                MessageBox.Show("Update has failed. Try again later.");
+            }
+            //Chargement des données dans la Data GridView
+            DataTable dt = c.Select();
+            dgvContactList.DataSource = dt;
         }
 
         private void dgvContactList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -82,6 +106,12 @@ namespace testCSharp
             txtboxContactNo.Text = dgvContactList.Rows[rowIndex].Cells[3].Value.ToString();
             txtboxAddress.Text = dgvContactList.Rows[rowIndex].Cells[4].Value.ToString();
             cmbGender.Text = dgvContactList.Rows[rowIndex].Cells[5].Value.ToString();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            //Clear toutes les textbox
+            Clear();
         }
     }
 }
