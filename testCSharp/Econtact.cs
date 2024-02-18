@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using testCSharp.econtactClasses;
 
 namespace testCSharp
 {
@@ -17,14 +18,39 @@ namespace testCSharp
             InitializeComponent();
         }
 
+        contactClass c = new contactClass();
+
         private void Econtact_Load(object sender, EventArgs e)
         {
-
+            //Chargement des données dans la Data GridView
+            DataTable dt = c.Select();
+            dgvContactList.DataSource = dt;
         }
 
-        private void lblContactID_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
+            //Récupération des valeurs
+            c.FirstName = txtboxFirstName.Text;
+            c.LastName = txtboxLastName.Text;
+            c.ContactNo = txtboxContactNo.Text;
+            c.Address = txtboxAddress.Text;
+            c.Gender = cmbGender.Text;
 
+            //Ajout des données dans la BDD
+            bool success = c.Insert(c);
+            if (success = true)
+            {
+                //ajout réussi
+                MessageBox.Show("New contact inserted.");
+            }
+            else
+            {
+                MessageBox.Show("An error as occured. Try again later.");
+            }
+
+            //Chargement des données dans la Data GridView
+            DataTable dt = c.Select();
+            dgvContactList.DataSource = dt;
         }
     }
 }

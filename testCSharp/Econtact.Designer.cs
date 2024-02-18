@@ -47,11 +47,11 @@ namespace testCSharp
             this.button2 = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvContactList = new System.Windows.Forms.DataGridView();
             this.lblDataGrid = new System.Windows.Forms.Label();
             this.txtboxSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxLogo
@@ -75,13 +75,13 @@ namespace testCSharp
             this.lblContactID.Size = new System.Drawing.Size(82, 21);
             this.lblContactID.TabIndex = 1;
             this.lblContactID.Text = "Contact ID";
-            this.lblContactID.Click += new System.EventHandler(this.lblContactID_Click);
             // 
             // txtboxContactID
             // 
             this.txtboxContactID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtboxContactID.Location = new System.Drawing.Point(100, 205);
             this.txtboxContactID.Name = "txtboxContactID";
+            this.txtboxContactID.ReadOnly = true;
             this.txtboxContactID.Size = new System.Drawing.Size(244, 29);
             this.txtboxContactID.TabIndex = 2;
             // 
@@ -190,19 +190,20 @@ namespace testCSharp
             this.btnAdd.BackColor = System.Drawing.Color.Transparent;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnAdd.Location = new System.Drawing.Point(12, 627);
+            this.btnAdd.Location = new System.Drawing.Point(321, 627);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(156, 51);
             this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.Orange;
-            this.button2.Location = new System.Drawing.Point(188, 627);
+            this.button2.Location = new System.Drawing.Point(547, 627);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(156, 51);
             this.button2.TabIndex = 14;
@@ -214,7 +215,7 @@ namespace testCSharp
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDelete.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnDelete.Location = new System.Drawing.Point(364, 627);
+            this.btnDelete.Location = new System.Drawing.Point(768, 627);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(156, 51);
             this.btnDelete.TabIndex = 15;
@@ -226,21 +227,21 @@ namespace testCSharp
             this.btnClear.BackColor = System.Drawing.Color.Transparent;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnClear.ForeColor = System.Drawing.Color.Blue;
-            this.btnClear.Location = new System.Drawing.Point(545, 627);
+            this.btnClear.Location = new System.Drawing.Point(995, 627);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(156, 51);
             this.btnClear.TabIndex = 16;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dgvContactList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(420, 256);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(823, 307);
-            this.dataGridView1.TabIndex = 17;
+            this.dgvContactList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvContactList.Location = new System.Drawing.Point(420, 256);
+            this.dgvContactList.Name = "dgvContactList";
+            this.dgvContactList.RowTemplate.Height = 25;
+            this.dgvContactList.Size = new System.Drawing.Size(823, 307);
+            this.dgvContactList.TabIndex = 17;
             // 
             // lblDataGrid
             // 
@@ -268,7 +269,7 @@ namespace testCSharp
             this.ClientSize = new System.Drawing.Size(1307, 701);
             this.Controls.Add(this.txtboxSearch);
             this.Controls.Add(this.lblDataGrid);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvContactList);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.button2);
@@ -290,7 +291,7 @@ namespace testCSharp
             this.Text = "Econtact";
             this.Load += new System.EventHandler(this.Econtact_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContactList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,7 +316,7 @@ namespace testCSharp
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvContactList;
         private System.Windows.Forms.Label lblDataGrid;
         private System.Windows.Forms.TextBox txtboxSearch;
     }
