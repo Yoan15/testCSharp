@@ -209,6 +209,7 @@ namespace testCSharp
             this.button2.TabIndex = 14;
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnDelete
             // 
@@ -242,6 +243,7 @@ namespace testCSharp
             this.dgvContactList.RowTemplate.Height = 25;
             this.dgvContactList.Size = new System.Drawing.Size(823, 307);
             this.dgvContactList.TabIndex = 17;
+            this.dgvContactList.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvContactList_RowHeaderMouseClick);
             // 
             // lblDataGrid
             // 

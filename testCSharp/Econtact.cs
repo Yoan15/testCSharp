@@ -65,5 +65,23 @@ namespace testCSharp
             txtboxAddress.Text = "";
             cmbGender.Text = "";
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dgvContactList_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //Récupérer les données à partir de la DataGridView et les charger dans les textbox
+            //Récupérer la bonne ligne sélectionnée
+            int rowIndex = e.RowIndex;
+            txtboxContactID.Text = dgvContactList.Rows[rowIndex].Cells[0].Value.ToString();
+            txtboxFirstName.Text = dgvContactList.Rows[rowIndex].Cells[1].Value.ToString();
+            txtboxLastName.Text = dgvContactList.Rows[rowIndex].Cells[2].Value.ToString();
+            txtboxContactNo.Text = dgvContactList.Rows[rowIndex].Cells[3].Value.ToString();
+            txtboxAddress.Text = dgvContactList.Rows[rowIndex].Cells[4].Value.ToString();
+            cmbGender.Text = dgvContactList.Rows[rowIndex].Cells[5].Value.ToString();
+        }
     }
 }
