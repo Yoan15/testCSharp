@@ -42,6 +42,8 @@ namespace testCSharp
             {
                 //ajout réussi
                 MessageBox.Show("New contact inserted.");
+                //Appel de la methode Clear
+                Clear();
             }
             else
             {
@@ -51,6 +53,17 @@ namespace testCSharp
             //Chargement des données dans la Data GridView
             DataTable dt = c.Select();
             dgvContactList.DataSource = dt;
+        }
+
+        //Vider les champs
+        public void Clear()
+        {
+            txtboxContactID.Text = "";
+            txtboxFirstName.Text = "";
+            txtboxLastName.Text = "";
+            txtboxContactNo.Text = "";
+            txtboxAddress.Text = "";
+            cmbGender.Text = "";
         }
     }
 }
