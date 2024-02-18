@@ -44,7 +44,7 @@ namespace testCSharp
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.lblGender = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.dgvContactList = new System.Windows.Forms.DataGridView();
@@ -198,18 +198,18 @@ namespace testCSharp
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // button2
+            // btnUpdate
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.Orange;
-            this.button2.Location = new System.Drawing.Point(547, 627);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(156, 51);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnUpdate.ForeColor = System.Drawing.Color.Orange;
+            this.btnUpdate.Location = new System.Drawing.Point(547, 627);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(156, 51);
+            this.btnUpdate.TabIndex = 14;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -275,7 +275,7 @@ namespace testCSharp
             this.Controls.Add(this.dgvContactList);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblGender);
             this.Controls.Add(this.cmbGender);
@@ -316,7 +316,7 @@ namespace testCSharp
         private System.Windows.Forms.ComboBox cmbGender;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.DataGridView dgvContactList;

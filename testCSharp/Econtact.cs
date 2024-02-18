@@ -67,7 +67,7 @@ namespace testCSharp
             cmbGender.Text = "";
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
             //Récupérer les valeurs à partir des textbox
             c.ContactID = int.Parse(txtboxContactID.Text);
