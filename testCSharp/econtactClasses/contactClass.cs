@@ -134,7 +134,7 @@ namespace testCSharp.econtactClasses
             SqlConnection conn = new SqlConnection(myconnstrng);
             try
             {
-                string sql = "DELETE * FROM tbl_contact WHERE ContactID=@ContactID";
+                string sql = "DELETE FROM tbl_contact WHERE ContactID=@ContactID";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@ContactID", c.ContactID);
 

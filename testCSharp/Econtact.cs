@@ -38,7 +38,7 @@ namespace testCSharp
 
             //Ajout des données dans la BDD
             bool success = c.Insert(c);
-            if (success = true)
+            if (success == true)
             {
                 //ajout réussi
                 MessageBox.Show("New contact inserted.");
@@ -79,7 +79,7 @@ namespace testCSharp
 
             //Mise à jour des données dans la BDD
             bool success = c.Update(c);
-            if (success = true)
+            if (success == true)
             {
                 //Update réussie
                 MessageBox.Show("Contact has been updated");
@@ -112,6 +112,27 @@ namespace testCSharp
         {
             //Clear toutes les textbox
             Clear();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            //Récupérer le ContactID de l'application
+            c.ContactID = Convert.ToInt32(txtboxContactID.Text);
+            bool success = c.Delete(c);
+            if (success == true)
+            {
+                //Suppression réussie
+                MessageBox.Show("Contact successfully deleted.");
+                //Mise a jour de la DataGridView
+                DataTable dt = c.Select();
+                dgvContactList.DataSource = dt;
+                Clear();
+            }
+            else
+            {
+                //Suppression échouée
+                MessageBox.Show("Failed to delete contact. Try again later.");
+            }
         }
     }
 }
