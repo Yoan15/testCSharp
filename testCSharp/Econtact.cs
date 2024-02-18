@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -133,6 +135,19 @@ namespace testCSharp
                 //Suppression échouée
                 MessageBox.Show("Failed to delete contact. Try again later.");
             }
+        }
+
+        static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
+        private void txtboxSearch_TextChanged(object sender, EventArgs e)
+        {
+            //Récupérer la valeur de la textbox
+            string keyword = txtboxSearch.Text;
+            //connexion à la BDD
+            SqlConnection conn = new SqlConnection(myconnstrng);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM tbl_contact WHERE FirstName LIKE '%"+keyword+"%' OR LastName LIKE '%"+keyword+"%' OR Address LIKE '%"+keyword+"%'", conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgvContactList.DataSource = dt;
         }
     }
 }

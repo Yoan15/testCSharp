@@ -265,6 +265,7 @@ namespace testCSharp
             this.txtboxSearch.Name = "txtboxSearch";
             this.txtboxSearch.Size = new System.Drawing.Size(759, 29);
             this.txtboxSearch.TabIndex = 19;
+            this.txtboxSearch.TextChanged += new System.EventHandler(this.txtboxSearch_TextChanged);
             // 
             // Econtact
             // 
